@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Introduction to React</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+    <h1 class="header-text">Introduction to React</h1>
+  </div>
+  <p>Please review the concepts covered this week.</p>
+
+
+<h2 id="react">React</h2>
+<p>React is a JavaScript library which allows you to quickly and efficiently create user interface (UI) elements with
+  declarative language. </p>
+<h2 id="component">Components</h2>
+<p>A component is a building block of a React application. A React application typically has many components. Each
+  component describes how a section of the UI (user interface) should look and function. </p>
+<p>Here is a component that creates a header element with the words &quot;Hello World!&quot; inside it. Notice that it's
+  created using JavaScript instead of HTML, even though it makes use of the HTML element. We can do this by using JSX,
+  the JavaScript syntax extension that lets us use HTML in our JavaScript. </p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Greeting = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &lt;h1&gt;Hello World!<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+</code></pre>
+<h2 id="jsx">JSX</h2>
+<p>JSX is a JavaScript syntax extension that allows you to write HTML in JavaScript. By doing so, you can create React
+  components much more quickly rather than writing them out entirely by hand in plain JavaScript. If you do not use JSX, you
+  have to explicitly tell JavaScript to use the React library to create an element.  JSX is used in place of vanilla JavaScript files
+in a React application for that reason. </p>
+<p>Here is a code snippet of a React component created <em>without</em> JSX, from the React.js documentation: </p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> <span class="hljs-type">React</span>.createElement(<span class="hljs-symbol">'di</span>v', <span class="hljs-literal">null</span>, `<span class="hljs-type">Hello</span> ${<span class="hljs-keyword">this</span>.props.toWhat}`);
+  }
+}
+
+<span class="hljs-type">ReactDOM</span>.render(
+  <span class="hljs-type">React</span>.createElement(<span class="hljs-type">Hello</span>, {toWhat: <span class="hljs-symbol">'Worl</span>d'}, <span class="hljs-literal">null</span>),
+  document.getElementById(<span class="hljs-symbol">'roo</span>t')
+);
+</code></pre>
+<p>And here is the same element created using JSX, from the React.js documentation: </p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> &lt;div&gt;<span class="hljs-type">Hello</span> {<span class="hljs-keyword">this</span>.props.toWhat}&lt;/div&gt;;
+  }
+}
+
+<span class="hljs-type">ReactDOM</span>.render(
+  &lt;<span class="hljs-type">Hello</span> toWhat=<span class="hljs-string">"World"</span> /&gt;,
+  document.getElementById(<span class="hljs-symbol">'roo</span>t')
+);
+</code></pre>
+<p>Notice how using JSX makes the syntax much cleaner and easier to understand, as well as considerably shorter. </p>  
+
+
+<h2 id="destructuring">Destructuring</h2>
+<p>Destructuring is a convenient way of extracting multiple values from data stored in objects and arrays and storing
+  them in variables. </p>
+<p>Here is an example of an object being destructured: </p>
+<pre><code class="lang-js">const obj = { <span class="hljs-string">first:</span> <span class="hljs-string">'Mark'</span>, <span class="hljs-string">last:</span> <span class="hljs-string">'Smith'</span> };
+const {<span class="hljs-string">firstName:</span> first, <span class="hljs-string">lastName:</span> last} = obj;
+    <span class="hljs-comment">// first = 'Mark'; last = 'Smith'</span>
+</code></pre>
+<p>Here is a way to assign variables using destructuring: </p>
+<pre><code class="lang-js">let <span class="hljs-selector-tag">a</span> 
+let <span class="hljs-selector-tag">b</span>
+[<span class="hljs-selector-tag">a</span>, b] = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]
+console.log(<span class="hljs-selector-tag">a</span>, b)
+<span class="hljs-comment">//output</span>
+<span class="hljs-number">10</span>, <span class="hljs-number">20</span>
+</code></pre>
+<p class="footer">© MIT xPRO 2020. All rights reserved.</p>
+</body>
+</html>
